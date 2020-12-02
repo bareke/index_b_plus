@@ -11,6 +11,12 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
+from core.utils import load_tree
+from core.utils import random_products
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'index_b_plus.settings')
 
 application = get_wsgi_application()
+
+random_products()
+load_tree()

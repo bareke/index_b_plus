@@ -1,0 +1,93 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Indice B+</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" shrink-to-fit="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- favicons -->
+
+<link rel="icon" type="image/png" sizes="192x192"  href="{% static 'core/images/android-icon-192x192.png' %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'core/images/favicon-32x32.png' %}">
+<link rel="icon" type="image/png" sizes="96x96" href="{% static 'core/images/favicon-96x96.png' %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'core/images/favicon-16x16.png' %}">
+<!-- favicons -->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'core/css/style.css'  %}">
+<link rel="stylesheet" type="text/css" href="{% static 'core/css/custom-responsive-style.css' %}">
+<script type="text/javascript" src="{%  static 'core/scripts/jquery-3.2.1.min.js' s%}"></script>
+<script type="text/javascript" src="{% static 'core/scripts/plugin-active.js' %}"></script>
+</head>
+<body>
+  <header>
+    <div class="mobile-logo">
+    <a href=""><img src="{% static 'core/images/icon.png' %}"></a>
+  </div>
+  <a class="menu-toggle rounded" href="#">
+    <i class="fa fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="smooth-scroll" href="#Header"></a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#Services">Busqueda Indexada</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#OurWork">Busqueda No indexada</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#Contact">Contacto</a>
+      </li>
+    </ul>
+  </nav>
+  </header>
+<section id="Services">
+  <div class="container">
+    <h2>Resultados de la {{ data.title }}</h2>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-6 col-xl-6">
+        <div class="each-services">
+          <img src="{% static 'core/images/digital-marketing.jpg' %}" alt="Services">
+          <h3>Producto encontrado</h3>
+          <ul>
+            <li>Identificación: {{ data.product_id }}</li>
+            <li>Precio: {{ data.price }}</li>
+            <li>Posición: {{ data.position }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-6 col-xl-6">
+        <div class="each-services">
+          <img src="{% static 'core/images/web-design.jpg' %}" alt="Services">
+          <h3>Tiempo empleado</h3>
+          <ul>
+            <li>Milisegundos: {{ data.time }} </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div>
+</div>
+<footer id="Contact">
+  <div class="container">
+    <p>Proyecto Final de Teoría de Bases de datos 2</p>
+    <a href="{% url 'index' %} " class="email-btn"><span><i aria-hidden="true"></i> Volver</span></a>
+    <ul class="social-icons">
+      <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+      <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+      <li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+      <li><a href=""><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+      <li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+</footer>
+ <div class="copyright"><p>Universidad del Cauca 2020</p>
+</div>
+</body>
+</html>
