@@ -26,7 +26,9 @@ def load_tree():
             bplustree.insert(line.split()[0], position)
             position += 1
     bplustree.show()
-    cache.set('bplustree', bplustree)
+
+    # Tree in memory
+    cache.set('bplustree', bplustree, 600)
 
 def search_by_position(position):
     with open(settings.PATH_FILE, 'r') as file:
@@ -38,4 +40,21 @@ def search_by_position(position):
 def append_product_to_file(product_id, price):
     file = open(settings.PATH_FILE, 'a')
     file.write('{0} {1}'.format(product_id, price))
+    file.write('\n')
     file.close()
+
+def count_file():
+    count = 0
+    with open(settings.PATH_FILE, 'r') as file:
+        for line in file:
+            count += 1
+    return count
+
+def is_exist(product_id):
+    position = 1
+    with open(settings.PATH_FILE, 'r') as file:
+        for line in file:
+            if line.split()[0] == str(product_id):
+                return True
+            position += 1
+    return False

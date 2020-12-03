@@ -11,6 +11,7 @@ def seq(product_id):
             if line.split()[0] == str(product_id):
                 return product_id, line.split()[1], position
             position += 1
+    return None
 
 
 if __name__ == "__main__":
